@@ -1,3 +1,7 @@
 /*
   Project main stylesheet
 */
+p {
+  font-weight: bold;
+  background-color: yellow;
+}
