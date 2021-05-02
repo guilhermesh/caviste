@@ -16,4 +16,4 @@ L'application MonCellier devra gérer une cave à vin. Il sera possible pour tou
 
 Exemples:
 
-![Image](exemple.png)
+![Image](/images/exemple.png)
