@@ -1,7 +1,7 @@
 /**
  * Project main script
  */
-const wineData = [
+/*const wineData = [
 {
 id: "1",
 name: "CHATEAU DE SAINT COSME",
@@ -171,13 +171,13 @@ color: "red",
 extra: null
 }
 ]
-
-
+*/
+/*
 function wineTemplate(wine) {
   return `
     <div class = "col-3 wine-block m-2">
       <div class="p-2">
-        <a href="#"><img src = "./images/${wine.picture}" alt="${wine.id}""></a>
+        <a href="wine.html"><img src = "./images/${wine.picture}" alt="${wine.id}""></a>
       </div>
       <div>
       <p>${wine.country}, ${wine.region}</p>
@@ -189,3 +189,32 @@ function wineTemplate(wine) {
 }
 
 document.getElementById("wines").innerHTML = `${wineData.map(wineTemplate).join('')}`
+*/
+let wineList = document.getElementById("wines");
+let wineStructure = "";
+
+const xhr = new XMLHttpRequest() //console.log(xhr);
+
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    let data = xhr.responseText //console.log(data);
+
+    wines = JSON.parse(data);
+    let winesArr = Object.values(wines);
+    
+    //console.log(winesArr);console.log(wines);console.log(Object.keys(wines).length);
+    for (let i = 0; i < Object.keys(wines).length; i++) {
+      wineStructure += "<div class = \"col-3 wine-block m-2\">"+"<div class=\"p-2\">" + "<a href=\"wine.html\">" + "<img src = \"./images/" + winesArr[i].picture + "\">" + "</a>" + "</div>"+"<div>"+"<p>" + winesArr[i].country + "," + winesArr[i].region + "</p>" + "<h6>" + "<a href=\"wine.html\">" + winesArr[i].name + "</a>" + "</h6>" + "<p>" + winesArr[i].grapes + "," + winesArr[i].year + "</p>" + "</div>" + "</div>";
+    }
+
+    wineList.innerHTML = wineStructure;
+    
+  }
+}
+
+xhr.open(
+  "GET",
+  "https://cruth.phpnet.org/epfc/caviste/public/index.php/api/wines",
+  true
+);
+xhr.send();

@@ -5,6 +5,10 @@ h1.title, h6>a {
   color: purple;
 }
 
+a.title {
+  text-decoration: none;
+}
+
 h6>a {
   text-decoration: none;
 }
