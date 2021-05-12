@@ -71,7 +71,7 @@ footer {
 .tabs {
   display: flex;
   list-style-type: none;
-  margin: 0 230px 0 230px;
+  margin: 0 0 0 530px;
   background-color: lightgray;
   padding: 0;
   border: 1px solid gray;
@@ -98,7 +98,7 @@ footer {
 }
 
 .tab-content {
-  margin: 0 230px 0 230px;
+  margin: 0 0 0 530px;
   padding: 5px 5px;
   border: 1px solid gray;
   border-top: none;
