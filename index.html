@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,16 +30,17 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="container d-flex flex-wrap justify-content-center">
+    <header class="container-fluid d-flex flex-wrap justify-content-center">
       <div class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
         <a href="index.html" class="title"><h1 class="title">MonCellier</h1></a>
       </div>
       <nav class="d-flex text-end align-items-center">
         <a href="index.html" class="px-3 menu-item">Home</a>
         <a href="about.html" class="px-3 menu-item">About</a>
+        <a href="login.html" class="px-3 menu-item">Log in</a>
       </nav>
     </header>
-    <div class="container pt-2">
+    <div class="container-fluid pt-2">
       <div class="row">
         <form id="frmSearch" action="#" method="get" class="col-3">
           <input
@@ -58,89 +59,80 @@
             Search
           </button>
         </form>
-        <form id="frmFilter" action="#" method="get" class="col-3">
-          <select name="filters" id="filters" class="col-8 mx-2">
-            <option value="">Select</option>
+        <form id="frmFilter" action="#" method="get" class="col-6">
+          <select name="filters" id="filters" class="col-3 mx-2">
+            <option value=""></option>
             <option value="grapes">Grapes</option>
             <option value="country">Country</option>
             <option value="region">Region</option>
-            <option value="year">Year</option>
+          </select>
+          <select name="filterYear" id="filterYear" class="col-3 mx-2">
+            <option value=""></option>
+            <option value="">2020</option>
+            <option value="">2019</option>
+            <option value="">2018</option>
+            <option value="">2017</option>
           </select>
           <button
             id="btFilter"
             name="btFilter"
             type="button"
-            class="btn btn-primary col-3"
+            class="btn btn-primary col-2"
           >
             Filter
           </button>
         </form>
       </div>
     </div>
-    <main class="container py-4">
-      <div id="wines" class="row d-flex flex-wrap justify-content-between">
-        <!-- <div class="col-3 wine-block m-2">
-        <div>
-        <a><img src="#" alt="wine1"></a>
+    <hr>
+    <main class="container-fluid  py-4">
+      <div class="row d-flex flex-wrap">
+        <div class="col-3 md-3 mb-5">
+          <ul id="list" class="list-group">
+            
+          </ul>
         </div>
-        <div>
-          <p>Pays, region</p>
-          <h6>Nom vin</h6>
-          <p>Grapes</p>
-        </div>
-      </div>
-      <div class="col-3 wine-block m-2">
-        <div>
-          <a><img src="./images/block_nine.jpg" alt="wine1"></a>
-        </div>
-        <div>
-          <p>USA, California</p>
-          <h6>BLOCK NINE</h6>
-          <p>Pinot Noir</p>
-        </div>
-      </div>
-      <div class="col-3 wine-block m-2">
-        <div>
-          <a><img src="#" alt="wine1"></a>
-        </div>
-        <div>
-          <p>Pays, region</p>
-          <h6>Nom vin</h6>
-          <p>Grapes</p>
-        </div>
-      </div>
-      <div class="col-3 wine-block m-2">
-        <div>
-          <a><img src="#" alt="wine1"></a>
-        </div>
-        <div>
-          <p>Pays, region</p>
-          <h6>Nom vin</h6>
-          <p>Grapes</p>
-        </div>
-      </div>
-      <div class="col-3 wine-block m-2">
-        <div>
-          <a><img src="#" alt="wine1"></a>
-        </div>
-        <div>
-          <p>Pays, region</p>
-          <h6>Nom vin</h6>
-          <p>Grapes</p>
+        <div class="wineCard col row">
+            <div class="col">
+            <img src="/images/generic.jpg" id="pictureWine" alt="wine 1"> 
+            </div>
+          <div class="col align-self-center">
+            <ul class="wineDescription">
+              <span id="idWine" class="h4 d-inline">&#35;Id</span>
+              <li id="nameWine" class="h4 d-inline">Name</li>
+              <li id="grapesWine">Grapes</li>
+              <li id="yearWine">Year</li>
+              <li id="countryWine">Country</li>
+              <li id="regionWine">Region</li>
+              <li id="capacityWine">Capacity</li>
+              <li id="colorWine">Color</li>
+              <li id="priceWine">Price</li>
+            </ul>         
+          </div>
+        <div class="col mt-3">         
+          <ul class="tabs">
+            <li data-tab-target="#description" class=" active tab">Description</li>
+            <li data-tab-target="#comments" class="tab">Comments</li>
+            <li data-tab-target="#notes" class="tab">Personal notes</li>
+          </ul>
+          <div class="tab-content">
+            <div id="description" data-tab-content class="active">
+                <p id="descriptionWine"></p>
+            </div>
+
+            <div id="comments" data-tab-content>
+                <p></p>
+            </div>
+            <div id="notes" data-tab-content>
+                <p></p>
+            </div>
+            </div>
         </div>
       </div>
-      <div class="col-3 wine-block m-2">
-        <div>
-          <a><img src="#" alt="wine1"></a>
         </div>
-        <div>
-          <p>Pays, region</p>
-          <h6>Nom vin</h6>
-          <p>Grapes</p>
-        </div>
-      </div> -->
-      </div>
+        
     </main>
+   
     <footer>&copy;EPFC</footer>
   </body>
 </html>
